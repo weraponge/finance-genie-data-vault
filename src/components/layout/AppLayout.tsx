@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { useMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { WorkflowPanel } from "@/components/workflow/WorkflowPanel";
 
 interface AppLayoutProps {
@@ -13,7 +13,7 @@ interface AppLayoutProps {
 }
 
 export function AppLayout({ children }: AppLayoutProps) {
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
   const [showWorkflowPanel, setShowWorkflowPanel] = useState(false);
 
   return (
