@@ -10,6 +10,7 @@ import StocksPage from "./pages/StocksPage";
 import ImportPage from "./pages/ImportPage";
 import SavedStocksPage from "./pages/SavedStocksPage";
 import AIInsightsPage from "./pages/AIInsightsPage";
+import AnalysisPage from "./pages/AnalysisPage";
 import SettingsPage from "./pages/SettingsPage";
 import NotFound from "./pages/NotFound";
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/import" element={<ImportPage />} />
             <Route path="/saved" element={<SavedStocksPage />} />
             <Route path="/ai-insights" element={<AIInsightsPage />} />
+            <Route path="/analysis" element={<AnalysisPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
