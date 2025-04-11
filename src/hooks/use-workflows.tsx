@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback, createContext, useContext } from "react";
 import { Workflow } from "@/types/workflow";
 import { toast } from "sonner";
@@ -99,7 +98,7 @@ export function WorkflowsProvider({ children }: { children: React.ReactNode }) {
     // In a real app, this would delete from Supabase or localStorage
   }, []);
 
-  const runWorkflow = useCallback(async (id: string) => {
+  const runWorkflow = useCallback(async (id: string): Promise<void> => {
     const workflow = workflows.find(w => w.id === id);
     if (!workflow) {
       throw new Error("Workflow not found");
@@ -140,9 +139,6 @@ export function WorkflowsProvider({ children }: { children: React.ReactNode }) {
       // In a real app, we might save the result to Supabase and display it
       // For now, let's just show it in a toast
       toast.success("Workflow completed successfully");
-      
-      // Return the result for possible use elsewhere
-      return result;
     } catch (error) {
       console.error("Error running workflow:", error);
       throw error;
